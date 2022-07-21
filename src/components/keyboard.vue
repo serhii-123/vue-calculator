@@ -23,8 +23,12 @@ export default {
     };
   },
   methods: {
-    handleClick(e) {
-      alert(e);
+    handleClick(value) {
+      if(value == '=') {
+        this.$emit('execution');
+      } else {
+        this.$emit('symbolAdding');
+      }
     }
   }
 }

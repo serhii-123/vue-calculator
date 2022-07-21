@@ -1,5 +1,8 @@
 <template>
-  <text-block class="app__text-block"></text-block>
+  <text-block
+      class="app__text-block"
+      :text="enteredValue"
+  ></text-block>
   <keyboard></keyboard>
 </template>
 
@@ -12,6 +15,11 @@ export default {
     TextBlock,
     Keyboard
   },
+  data() {
+    return {
+      enteredValue: ''
+    };
+  }
 }
 </script>
 
