@@ -15,12 +15,16 @@ export default {
 
 <style scoped>
 .text-block {
-  padding: 20px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 10px;
   background-color: rgb(50, 50, 50);
 }
 .text-block__text {
   text-overflow: ellipsis;
   font-family: sans-serif;
   font-size: 20px;
+  color: rgb(255, 255, 255);
 }
 </style>

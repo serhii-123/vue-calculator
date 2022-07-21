@@ -18,9 +18,11 @@ export default {
 
 <style scoped>
 .calculatorBtn {
+  display: block;
   font-family: sans-serif;
   font-size: 20px;
   color: rgb(255, 255, 255);
   background-color: rgb(30, 30, 30);
+  border: none;
 }
 </style>
