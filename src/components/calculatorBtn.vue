@@ -1,16 +1,16 @@
 <template>
-  <button class="calculatorBtn" @click="emitBtnClick">{{symbol}}</button>
+  <button class="calculatorBtn" @click="emitBtnClick">{{value}}</button>
 </template>
 
 <script>
 export default {
   name: "my-button",
   props: {
-    symbol: [String, Number]
+    value: [String, Number]
   },
   methods: {
     emitBtnClick() {
-      this.$emit('btnClick', this.symbol);
+      this.$emit('btnClick', this.value);
     }
   }
 }

@@ -2,8 +2,8 @@
   <div class="keyboard">
     <calculator-btn
         class="keyboard__btn"
-        v-for="value in symbols"
-        :symbol="value"
+        v-for="value in values"
+        :value="value"
         @btn-click="handleClick"
     ></calculator-btn>
   </div>
@@ -19,15 +19,26 @@ export default {
   },
   data() {
     return {
-      symbols: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+', '-', '*', '/', '(', ')', '=']
+      values: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+', '-', '*', '/', '(', ')', 'Clean all', 'Clean last', '=']
     };
   },
   methods: {
     handleClick(value) {
-      if(value == '=') {
-        this.$emit('execution');
-      } else {
-        this.$emit('symbolAdding');
+      switch(value) {
+        case '=':
+          this.$emit('execution');
+          break;
+        case 'Clean all':
+          console.log('clean all');
+          this.$emit('cleaningAll');
+          break;
+        case 'Clean last':
+          console.log('clean last')
+          this.$emit('cleaningLast');
+          break;
+        default:
+          this.$emit('symbolAdding', value);
+          break;
       }
     }
   }
@@ -45,6 +56,14 @@ export default {
   margin: 0 8px 8px 0;
 }
 .keyboard__btn:nth-child(4n) {
+  margin: 0 0 8px 0;
+}
+.keyboard__btn:nth-child(17) {
+  width: 156px;
+  margin: 0 8px 8px 0;
+}
+.keyboard__btn:nth-child(18) {
+  width: 156px;
   margin: 0 0 8px 0;
 }
 .keyboard__btn:last-child {
